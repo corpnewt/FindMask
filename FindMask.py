@@ -12,6 +12,7 @@ class Masks:
                 text = text.split(":")[1]
             if "//" in text:
                 text = text.split("//")[0]
+            text = text.replace("0x","").replace(" ","")
             return binascii.hexlify(binascii.unhexlify(text.replace(" ",""))).decode().upper()
         except Exception as e:
             if error:
